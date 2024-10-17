@@ -1,54 +1,37 @@
-document.getElementById("quiz-form").addEventListener("submit", function(event) {
-    event.preventDefault(); // Предотвращаем отправку формы
-
-    var results = {
-        ФРЭ: 0,
-        ФИТУ: 0,
-        ИЭФ: 0,
-        ФИБ: 0,
-        КСИС: 0
+function calculateResult() {
+    var form = document.getElementById('quiz-form');
+    var result = document.getElementById('result');
+    var answers = {
+        "ФРЭ": 0,
+        "ФИТУ": 0,
+        "ИЭФ": 0,
+        "ФИБ": 0
     };
 
-    // Подсчет результатов
-    for (var i = 1; i <= 13; i++) {
-        var answer = document.querySelector('input[name="q' + i + '"]:checked');
-        if (answer) {
-            results[answer.value]++;
+    for (var i = 1; i <= 15; i++) {
+        var q = form['q' + i];
+        if (q) {
+            for (var j = 0; j < q.length; j++) {
+                if (q[j].checked) {
+                    answers[q[j].value]++;
+                }
+            }
         }
     }
 
-    // Определение типа студента
-    var maxValue = Math.max(results.ФРЭ, results.ФИТУ, results.ИЭФ, results.ФИБ, results.КСИС);
-    var studentType = '';
+    var maxScore = Math.max(answers["ФРЭ"], answers["ФИТУ"], answers["ИЭФ"], answers["ФИБ"]);
+    var faculty;
 
-    for (var key in results) {
-        if (results[key] === maxValue) {
-            studentType = key;
-            break;
-        }
+    if (answers["ФРЭ"] === maxScore) {
+        faculty = "Факультет радиоэлектроники";
+    } else if (answers["ФИТУ"] === maxScore) {
+        faculty = "Факультет информационных технологий и управления";
+    } else if (answers["ИЭФ"] === maxScore) {
+        faculty = "Инженерно-экономический факультет";
+    } else {
+        faculty = "Факультет информационной безопасности";
     }
 
-    var resultText = "Вы - ";
-    switch (studentType) {
-        case "ФРЭ":
-            resultText += "ФРЭШНИК";
-            break;
-        case "ФИТУ":
-            resultText += "ФИТУШНИК";
-            break;
-        case "ИЭФ":
-            resultText += "ИЭФ";
-            break;
-        case "ФИБ":
-            resultText += "ФИБ";
-            break;
-        case "КСИС":
-            resultText += "КСИС";
-            break;
-        default:
-            resultText += "студент БГУИР.";
-    }
-
-    document.getElementById("result").innerText = resultText;
-    document.getElementById("result").style.display = "block"; // Показываем результат
-});
+    result.textContent = "Вы подходите для: " + faculty;
+    result.style.display = "block"; // Показываем результат
+}
