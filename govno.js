@@ -1,37 +1,30 @@
 function calculateResult() {
     var form = document.getElementById('quiz-form');
-    var result = document.getElementById('result');
-    var answers = {
-        "ФРЭ": 0,
-        "ФИТУ": 0,
-        "ИЭФ": 0,
-        "ФИБ": 0
+    var scores = {
+        'ФРЭ': 0,
+        'ФИТУ': 0,
+        'ИЭФ': 0,
+        'ФИБ': 0
     };
 
+    // Считаем все адказы чела который вводит
     for (var i = 1; i <= 15; i++) {
-        var q = form['q' + i];
-        if (q) {
-            for (var j = 0; j < q.length; j++) {
-                if (q[j].checked) {
-                    answers[q[j].value]++;
+        var question = form['q' + i];
+        if (question) {
+            for (var j = 0; j < question.length; j++) {
+                if (question[j].checked) {
+                    scores[question[j].value]++;
                 }
             }
         }
     }
 
-    var maxScore = Math.max(answers["ФРЭ"], answers["ФИТУ"], answers["ИЭФ"], answers["ФИБ"]);
-    var faculty;
+  
+    var maxScore = Math.max(scores['ФРЭ'], scores['ФИТУ'], scores['ИЭФ'], scores['ФИБ']);
+    var bestFaculties = Object.keys(scores).filter(function(faculty) {
+        return scores[faculty] === maxScore;
+    });
 
-    if (answers["ФРЭ"] === maxScore) {
-        faculty = "Факультет радиоэлектроники";
-    } else if (answers["ФИТУ"] === maxScore) {
-        faculty = "Факультет информационных технологий и управления";
-    } else if (answers["ИЭФ"] === maxScore) {
-        faculty = "Инженерно-экономический факультет";
-    } else {
-        faculty = "Факультет информационной безопасности";
-    }
-
-    result.textContent = "Вы подходите для: " + faculty;
-    result.style.display = "block"; // Показываем результат
+    var resultPage = 'result.html?faculties=' + bestFaculties.join(',');
+    window.location.href = resultPage;
 }

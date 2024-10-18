@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результаты теста - БГУИР</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-title">Ваш результат!</h1>
+        <div id="result" style="text-align: center; font-size: 1.5em; margin-top: 20px;"></div>
+        <div id="faculty-image" style="text-align: center; margin-top: 20px;"></div>
+
+        <script>
+            function getResults() {
+                var params = new URLSearchParams(window.location.search);
+                var faculties = params.get('faculties').split(',');
+                var resultDiv = document.getElementById('result');
+                var imageDiv = document.getElementById('faculty-image');
+                var images = {
+                    'ФРЭ': 'images/фрэ.jpg',
+                    'ФИТУ': 'images/дима фитушка.jpg',
+                    'ИЭФ': 'images/иэф.jpg', 
+                    'ФИБ': 'images/фиб.jpg' 
+                };
+        
+             
+                var resultText = 'Ваш факультет: ' + faculties.join(', ') + '.';
+        
+            
+                resultDiv.innerHTML = resultText;
+        
+               
+                faculties.forEach(function(faculty) {
+                    var img = document.createElement('img');
+                    img.src = images[faculty];
+                    img.alt = faculty; 
+                    img.style.width = '300px'; 
+                    img.style.margin = '10px'; 
+                    imageDiv.appendChild(img); 
+                });
+            }
+        
+            getResults();
+        </script>
+        
+    </div>
+</body>
+</html>

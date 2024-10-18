@@ -3,172 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Какой факультет БГУИР тебе подходит?</title>
+    <title>Главная страница - Тест БГУИР</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1 class="title">Какой факультет БГУИР тебе подходит?</h1>
-        <p class="welcome-message">Если ты хочешь узнать, какой факультет подходит тебе больше всего, ответь на 15 вопросов!</p>
-        
-        <img src="https://www.bsuir.by/m/12_100229_1_152101.jpg" alt="БГУИР" class="uni-image">
+        <header>
+            <h1 class="main-title">Добро пожаловать на тест БГУИР</h1>
+        </header>
 
-        <div class="description">
-            <h2>О БГУИР</h2>
-            <p>Белорусский государственный университет информатики и радиоэлектроники (БГУИР) — один из ведущих вузов Беларуси, предлагающий качественное образование в области информационных технологий, радиоэлектроники и смежных дисциплин. Университет активно сотрудничает с международными учебными заведениями и научными организациями, предоставляя своим студентам уникальные возможности для обучения и профессионального роста.</p>
+        <section class="intro">
+            <p>Хотите узнать, какой факультет БГУИР подходит вам больше всего? Пройдите наш тест и получите результат всего за 15 вопросов!</p>
+        </section>
+
+        <div class="image-container">
+            <img src="https://www.bsuir.by/m/12_100229_1_79522.jpg" alt="БГУИР" class="intro-image">
         </div>
 
-        <div class="description">
-            <h2>Зачем проходить этот тест?</h2>
-            <p>Этот тест поможет тебе лучше понять свои интересы и предпочтения в области учебы. Ответив на 15 вопросов, ты сможешь получить рекомендацию по факультету, который соответствует твоим склонностям и целям. Это отличный способ определить, какую профессию выбрать в будущем!</p>
-        </div>
+        <section class="description">
+            <p>БГУИР — это ведущий технический университет Беларуси. У нас готовят специалистов в области информационных технологий, радиоэлектроники, кибербезопасности и экономики.</p>
+            <p>Наш тест поможет вам определиться с направлением обучения и выбрать факультет, который соответствует вашим интересам и склонностям.</p>
+        </section>
 
-        <div class="quiz-container">
-            <h2>Вопросы:</h2>
-            <form id="quiz-form">
-                <div class="question">
-                    <h3>1. Как ты предпочитаешь проводить свободное время?</h3>
-                    <label><input type="radio" name="q1" value="ФРЭ"> Чтение научных статей</label><br>
-                    <label><input type="radio" name="q1" value="ФИТУ"> Разработка игр или приложений</label><br>
-                    <label><input type="radio" name="q1" value="ИЭФ"> Спорт и активный отдых</label><br>
-                    <label><input type="radio" name="q1" value="ФИБ"> Социальные сети и общение с друзьями</label>
-                </div>
-
-                <div class="question">
-                    <h3>2. Какие школьные предметы тебе давались легче всего?</h3>
-                    <label><input type="radio" name="q2" value="ФИТУ"> Математика</label><br>
-                    <label><input type="radio" name="q2" value="ФРЭ"> Физика</label><br>
-                    <label><input type="radio" name="q2" value="КСИС"> Литература</label><br>
-                    <label><input type="radio" name="q2" value="ИЭФ"> Обществоведение</label>
-                </div>
-
-                <div class="question">
-                    <h3>3. Какой тип деятельности тебе ближе?</h3>
-                    <label><input type="radio" name="q3" value="ФРЭ"> Исследования</label><br>
-                    <label><input type="radio" name="q3" value="ФИТУ"> Создание новых технологий</label><br>
-                    <label><input type="radio" name="q3" value="ИЭФ"> Управление проектами</label><br>
-                    <label><input type="radio" name="q3" value="ФИБ"> Защита информации</label>
-                </div>
-
-                <div class="question">
-                    <h3>4. Какой стиль работы тебе ближе?</h3>
-                    <label><input type="radio" name="q4" value="ФРЭ"> Исследовательский</label><br>
-                    <label><input type="radio" name="q4" value="ФИТУ"> Командный</label><br>
-                    <label><input type="radio" name="q4" value="ИЭФ"> Стратегический</label><br>
-                    <label><input type="radio" name="q4" value="ФИБ"> Оперативный</label>
-                </div>
-
-                <div class="question">
-                    <h3>5. Какой тип задач ты предпочитаешь?</h3>
-                    <label><input type="radio" name="q5" value="ФРЭ"> Технические задачи</label><br>
-                    <label><input type="radio" name="q5" value="ФИТУ"> Креативные задачи</label><br>
-                    <label><input type="radio" name="q5" value="ИЭФ"> Организационные задачи</label><br>
-                    <label><input type="radio" name="q5" value="ФИБ"> Задачи по безопасности</label>
-                </div>
-
-                <div class="question">
-                    <h3>6. Как ты относишься к работе в команде?</h3>
-                    <label><input type="radio" name="q6" value="ФРЭ"> Предпочитаю работать в одиночку</label><br>
-                    <label><input type="radio" name="q6" value="ФИТУ"> Нравится работать в команде</label><br>
-                    <label><input type="radio" name="q6" value="ИЭФ"> Я гибкий, мне все равно</label><br>
-                    <label><input type="radio" name="q6" value="ФИБ"> Я предпочитаю руководить командой</label>
-                </div>
-
-                <div class="question">
-                    <h3>7. Как ты себя видишь через 10 лет?</h3>
-                    <label><input type="radio" name="q7" value="ФРЭ"> Работая в высоких технологиях</label><br>
-                    <label><input type="radio" name="q7" value="ФИТУ"> Разрабатывая инновационные решения</label><br>
-                    <label><input type="radio" name="q7" value="ИЭФ"> Управляя собственным бизнесом</label><br>
-                    <label><input type="radio" name="q7" value="ФИБ"> Защищая киберпространство</label>
-                </div>
-
-                <div class="question">
-                    <h3>8. Какие навыки ты хочешь развивать?</h3>
-                    <label><input type="radio" name="q8" value="ФРЭ"> Технические навыки и инжиниринг</label><br>
-                    <label><input type="radio" name="q8" value="ФИТУ"> Программирование и IT-архитектура</label><br>
-                    <label><input type="radio" name="q8" value="ИЭФ"> Лидерство и управление</label><br>
-                    <label><input type="radio" name="q8" value="ФИБ"> Защита информации и безопасность</label>
-                </div>
-
-                <div class="question">
-                    <h3>9. Как ты относишься к рискам?</h3>
-                    <label><input type="radio" name="q9" value="ФРЭ"> Избегаю их</label><br>
-                    <label><input type="radio" name="q9" value="ФИТУ"> Принимаю, если они обоснованы</label><br>
-                    <label><input type="radio" name="q9" value="ИЭФ"> Рискую, чтобы достичь цели</label><br>
-                    <label><input type="radio" name="q9" value="ФИБ"> Стараюсь минимизировать</label>
-                </div>
-
-                <div class="question">
-                    <h3>10. Какую сферу ты считаешь наиболее интересной?</h3>
-                    <label><input type="radio" name="q10" value="ФРЭ"> Научные исследования</label><br>
-                    <label><input type="radio" name="q10" value="ФИТУ"> Информационные технологии</label><br>
-                    <label><input type="radio" name="q10" value="ИЭФ"> Экономика и финансы</label><br>
-                    <label><input type="radio" name="q10" value="ФИБ"> Кибербезопасность</label>
-                </div>
-
-                <div class="question">
-                    <h3>11. Какой вид деятельности тебя привлекает?</h3>
-                    <label><input type="radio" name="q11" value="ФРЭ"> Научная работа</label><br>
-                    <label><input type="radio" name="q11" value="ФИТУ"> Практическое применение знаний</label><br>
-                    <label><input type="radio" name="q11" value="ИЭФ"> Управление и организация</label><br>
-                    <label><input type="radio" name="q11" value="ФИБ"> Защита данных и систем</label>
-                </div>
-
-                <div class="question">
-                    <h3>12. Какой предмет ты хотел бы изучать углубленно?</h3>
-                    <label><input type="radio" name="q12" value="ФРЭ"> Радиоэлектронику</label><br>
-                    <label><input type="radio" name="q12" value="ФИТУ"> Программирование</label><br>
-                    <label><input type="radio" name="q12" value="ИЭФ"> Экономику</label><br>
-                    <label><input type="radio" name="q12" value="ФИБ"> Задачи по безопасности</label>
-                </div>
-
-                <div class="question">
-                    <h3>13. Как ты относишься к новым технологиям?</h3>
-                    <label><input type="radio" name="q13" value="ФРЭ"> Всегда в курсе последних новинок</label><br>
-                    <label><input type="radio" name="q13" value="ФИТУ"> Интересуюсь, когда они становятся популярными</label><br>
-                    <label><input type="radio" name="q13" value="ИЭФ"> Изучаю только те, что полезны для работы</label><br>
-                    <label><input type="radio" name="q13" value="ФИБ"> Не слежу за новыми технологиями</label>
-                </div>
-
-                <div class="question">
-                    <h3>14. Какой подход к обучению тебе ближе?</h3>
-                    <label><input type="radio" name="q14" value="ФРЭ"> Практический</label><br>
-                    <label><input type="radio" name="q14" value="ФИТУ"> Теоретический</label><br>
-                    <label><input type="radio" name="q14" value="ИЭФ"> Комбинированный</label><br>
-                    <label><input type="radio" name="q14" value="ФИБ"> Самостоятельный</label>
-                </div>
-
-                <div class="question">
-                    <h3>15. Какой тип проектов тебе интересен?</h3>
-                    <label><input type="radio" name="q15" value="ФРЭ"> Научные</label><br>
-                    <label><input type="radio" name="q15" value="ФИТУ"> Разработки</label><br>
-                    <label><input type="radio" name="q15" value="ИЭФ"> Управленческие</label><br>
-                    <label><input type="radio" name="q15" value="ФИБ"> Защитные</label>
-                </div>
-
-                <button type="button" onclick="calculateResult()">Узнать результат</button>
-            </form>
-            <div id="result" class="result"></div>
-        </div>
-
-        <div class="faculties">
-            <h2>Описание факультетов</h2>
-            <div class="faculty">
-                <h3>Факультет радиоэлектроники (ФРЭ)</h3>
-                <p>ФРЭ предлагает обучение по специальностям в области радиоэлектроники, обработки сигналов, телекоммуникаций и других современных технологий.</p>
-            </div>
-            <div class="faculty">
-                <h3>Факультет информационных технологий и управления (ФИТУ)</h3>
-                <p>ФИТУ обеспечивает студентов знаниями в области программирования, системного администрирования и управления информационными системами.</p>
-            </div>
-            <div class="faculty">
-                <h3>Инженерно-экономический факультет (ИЭФ)</h3>
-                <p>ИЭФ предлагает обучение по специальностям в области экономики, управления и инновационных технологий.</p>
-            </div>
-            <div class="faculty">
-                <h3>Факультет информационной безопасности (ФИБ)</h3>
-                <p>ФИБ готовит специалистов в области защиты информации, кибербезопасности и защиты данных.</p>
-            </div>
+        <div class="button-container">
+            <button class="start-test-button" onclick="location.href='quiz.html'">Пройти тест</button>
         </div>
 
         <footer>
@@ -180,7 +38,5 @@
             </div>
         </footer>
     </div>
-
-    <script src="govno.js"></script>
 </body>
 </html>
